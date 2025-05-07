@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Charts</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+  <header>
+    <nav>
+      <h1>AI Charts & Trends</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="use-cases.html">Use Cases</a></li>
+        <li><a href="timeline.html">Timeline</a></li>
+        <li><a href="charts.html">Charts</a></li>
+        <li><a href="ethics.html">Ethics</a></li>
+        <li><a href="future.html">Future</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="contact.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="intro" data-aos="fade-up">
+    <h2>Visualizing AI Trends</h2>
+    <p>These charts show how artificial intelligence is growing in various sectors and attracting global investments.</p>
+  </section>
+
+  <section class="charts-container">
+    <div class="chart-box" data-aos="fade-up">
+      <h3>AI Adoption in Sectors (2024)</h3>
+      <canvas id="barChart"></canvas>
+    </div>
+
+    <div class="chart-box" data-aos="fade-up" data-aos-delay="200">
+      <h3>Global AI Investment (2015–2024)</h3>
+      <canvas id="lineChart"></canvas>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 | Created by Aman Amir Khan & Abdul Hannan | Department of Biotechnology</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Bar Chart
+    const barCtx = document.getElementById('barChart').getContext('2d');
+    new Chart(barCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Healthcare', 'Education', 'Finance', 'Transportation', 'Retail'],
+        datasets: [{
+          label: '% Adoption',
+          data: [78, 65, 88, 60, 70],
+          backgroundColor: '#00bcd4'
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+
+    // Line Chart
+    const lineCtx = document.getElementById('lineChart').getContext('2d');
+    new Chart(lineCtx, {
+      type: 'line',
+      data: {
+        labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2022', '2024'],
+        datasets: [{
+          label: 'Investment (Billion USD)',
+          data: [8, 10, 15, 20, 30, 50, 70, 90],
+          fill: false,
+          borderColor: '#ff5722',
+          tension: 0.2
+        }]
+      },
+      options: {
+        responsive: true
+      }
+    });
+  </script>
+</body>
+</html>

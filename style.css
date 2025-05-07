@@ -1,0 +1,184 @@
+/* --- Global Styles --- */
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #f0f0e6; /* Eggshell white (light mode) */
+  color: #333; /* Dark text (light mode) */
+  transition: background 0.3s, color 0.3s;
+}
+
+/* --- Dark Mode --- */
+body.dark-mode {
+  background-color: #121212; /* Dark background */
+  color: #f1f1f1; /* Light text */
+}
+
+/* --- Banner (Restored!) --- */
+.banner {
+  background: url('images/ai-banner.jpg') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+}
+
+.banner-content {
+  z-index: 1;
+  color: white; /* Always white (for contrast on banner) */
+}
+
+/* --- Quiz Container (Fixed visibility) --- */
+.quiz-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9); /* Light mode */
+}
+
+.dark-mode .quiz-container {
+  background: rgba(30, 30, 30, 0.9); /* Dark mode */
+}
+
+/* --- Charts (Fixed visibility) --- */
+.chart-box {
+  background: rgba(255, 255, 255, 0.9); /* Light mode */
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.dark-mode .chart-box {
+  background: rgba(30, 30, 30, 0.9); /* Dark mode */
+}
+
+/* --- Navigation Bar --- */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  padding: 10px 20px;
+  border-bottom: 1px solid #333;
+}
+
+nav h1 {
+  font-size: 24px;
+  color: #00ffe1;
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: #00ffe1;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: rgba(0, 255, 225, 0.1);
+}
+
+/* Banner */
+.banner {
+  background: url('images/ai-banner.jpg') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.banner-content {
+  z-index: 1;
+  color: white;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.banner-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.banner-content p {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+.dark-mode nav {
+  background: #1e1e1e; /* Slightly lighter than full black */
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #111;
+  color: #999;
+}
+
+.dark-mode footer {
+  background: #1e1e1e;
+}
+
+/* --- Toggle Button --- */
+.toggle-btn {
+  position: fixed;
+  top: 60px;
+  right: 10px;
+  padding: 6px 12px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 999;
+}
+/* Center the card container */
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Horizontally centers all cards */
+  gap: 20px; /* Space between cards */
+}
+
+/* Optional: Fix card width for consistency */
+.card {
+  width: 110%; /* Adjust as needed */
+  max-width: 500px;
+}
+img[alt="AI in Healthcare"] {
+  height: 500px !important;
+  width: 110% !important;
+  margin-left: -5%; /* Counteract extra width */
+}

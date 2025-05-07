@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Quiz</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+  <header>
+    <nav>
+      <h1>AI Quiz</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="use-cases.html">Use Cases</a></li>
+        <li><a href="timeline.html">Timeline</a></li>
+        <li><a href="charts.html">Charts</a></li>
+        <li><a href="ethics.html">Ethics</a></li>
+        <li><a href="future.html">Future</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="contact.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="quiz-container" data-aos="fade-up">
+    <h2>Test Your AI Knowledge</h2>
+    <form id="quiz-form">
+      <div class="question">
+        <p>1. What does AI stand for?</p>
+        <label><input type="radio" name="q1" value="a"> Automated Interface</label><br>
+        <label><input type="radio" name="q1" value="b"> Artificial Intelligence</label><br>
+        <label><input type="radio" name="q1" value="c"> Analytical Information</label>
+      </div>
+
+      <div class="question">
+        <p>2. Which algorithm is often used in machine learning?</p>
+        <label><input type="radio" name="q2" value="a"> Bubble Sort</label><br>
+        <label><input type="radio" name="q2" value="b"> Linear Regression</label><br>
+        <label><input type="radio" name="q2" value="c"> Binary Search</label>
+      </div>
+
+      <div class="question">
+        <p>3. What field uses AI for image recognition?</p>
+        <label><input type="radio" name="q3" value="a"> Deep Learning</label><br>
+        <label><input type="radio" name="q3" value="b"> Spreadsheet Analysis</label><br>
+        <label><input type="radio" name="q3" value="c"> Web Design</label>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="result"></div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 | Aman Amir Khan & Abdul Hannan | All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script>
+    document.getElementById('quiz-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const answers = {
+        q1: 'b',
+        q2: 'b',
+        q3: 'a'
+      };
+      let score = 0;
+      for (let q in answers) {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === answers[q]) score++;
+      }
+      document.getElementById('result').innerHTML = `<h3>You scored ${score}/3</h3>`;
+    });
+  </script>
+</body>
+</html>
